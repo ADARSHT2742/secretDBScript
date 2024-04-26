@@ -1,0 +1,218 @@
+create table products25 (
+	proid serial primary key,
+	name varchar(100),
+	price bigint,
+	hsncode varchar(10),
+	imgpath varchar(1000),
+	catid int
+)
+
+
+create table customers25(
+	custid serial primary key,
+	name varchar(100),
+	contact bigint,
+	cdate date,
+	location bigint
+)
+
+
+create table hsncodes25(
+	hsncode varchar(10) primary key,
+	gst decimal
+);
+
+create table orders25(
+	orderid serial primary key,
+	order_date date,
+	price bigint,
+	custid int
+)
+
+create table categories25(
+	catid serial primary key,
+	catname varchar(100) unique not null
+)
+
+
+create table orderproducts25(
+	orderid int,
+	prodid int,
+	quantity int,
+	price bigint
+)
+
+
+
+alter table products25
+add constraint fk_catid foreign key(catid) references categories25(catid)
+
+
+alter table products25
+add constraint fk_hsncode foreign key(hsncode) references hsncodes25(hsncode)
+
+
+alter table orders25
+add constraint fk_custid foreign key(custid) references customers25(custid )
+
+
+alter table orderproducts25
+add constraint fk_orderid foreign key(orderid) references orders25(orderid  )
+
+
+alter table orderproducts25
+add constraint fk_proid foreign key(prodid) references products25(proid)
+
+
+
+alter table orderproducts25
+add constraint fk_orderproducts primary key(orderid , prodid)
+
+
+INSERT INTO categories25 (catname) VALUES
+('Electronics'),
+('Clothing'),
+('Home Appliances'),
+('Books'),
+('Beauty and Personal Care'),
+('Sports and Outdoors'),
+('Automotive'),
+('Furniture'),
+('Toys and Games'),
+('Health and Wellness');
+
+
+INSERT INTO hsncodes25 (hsncode, gst) VALUES
+('8517', 18),
+('9401', 12),
+('3304', 28),
+('4202', 18),
+('6204', 12),
+('8536', 28),
+('3401', 18),
+('9018', 12),
+('9403', 18),
+('3307', 28),
+('6302', 12),
+('8528', 18),
+('6105', 28),
+('8519', 12),
+('9013', 18),
+('9405', 28),
+('9503', 12),
+('8481', 18),
+('8418', 28),
+('8525', 12);
+
+
+INSERT INTO products25 (name, price, hsncode, imgpath, catid) VALUES
+
+('Smartphone', 50000, '8517', 'https://example.com/smartphone.jpg', 1),
+('Laptop', 70000, '8517', 'https://example.com/laptop.jpg', 1),
+('Headphones', 3000, '8517', 'https://example.com/headphones.jpg', 1),
+('Smartwatch', 10000, '8517', 'https://example.com/smartwatch.jpg', 1),
+('Bluetooth Speaker', 5000, '8517', 'https://example.com/bluetooth_speaker.jpg', 1),
+
+('T-Shirt', 1000, '6204', 'https://example.com/tshirt.jpg', 2),
+('Jeans', 2000, '6204', 'https://example.com/jeans.jpg', 2),
+('Dress', 3000, '6204', 'https://example.com/dress.jpg', 2),
+('Sweater', 2500, '6204', 'https://example.com/sweater.jpg', 2),
+('Jacket', 4000, '6204', 'https://example.com/jacket.jpg', 2),
+
+('Refrigerator', 60000, '8418', 'https://example.com/refrigerator.jpg', 3),
+('Washing Machine', 40000, '8418', 'https://example.com/washing_machine.jpg', 3),
+('Microwave Oven', 8000, '8418', 'https://example.com/microwave_oven.jpg', 3),
+('Air Conditioner', 35000, '8418', 'https://example.com/air_conditioner.jpg', 3),
+('Vacuum Cleaner', 5000, '8418', 'https://example.com/vacuum_cleaner.jpg', 3),
+
+('Shampoo', 300, '3304', 'https://example.com/shampoo.jpg', 5),
+('Lotion', 500, '3304', 'https://example.com/lotion.jpg', 5),
+('Sunscreen', 400, '3304', 'https://example.com/sunscreen.jpg', 5),
+('Perfume', 1000, '3304', 'https://example.com/perfume.jpg', 5),
+('Makeup Kit', 1500, '3304', 'https://example.com/makeup_kit.jpg', 5),
+
+('Running Shoes', 2000, '3401', 'https://example.com/running_shoes.jpg', 6),
+('Basketball', 1500, '9013', 'https://example.com/basketball.jpg', 6),
+('Tennis Racket', 3000, '9013', 'https://example.com/tennis_racket.jpg', 6),
+('Yoga Mat', 500, '9013', 'https://example.com/yoga_mat.jpg', 6),
+('Bicycle', 10000, '8481', 'https://example.com/bicycle.jpg', 6),
+
+('Car Wax', 200, '3304', 'https://example.com/car_wax.jpg', 7),
+('Car Air Freshener', 100, '3307', 'https://example.com/car_air_freshener.jpg', 7),
+('Tire Pressure Gauge', 1500, '9013', 'https://example.com/tire_pressure_gauge.jpg', 7),
+('Car Vacuum Cleaner', 3000, '9013', 'https://example.com/car_vacuum_cleaner.jpg', 7),
+('Car Smartphone Mount', 500, '9013', 'https://example.com/car_smartphone_mount.jpg', 7),
+
+('Sofa', 25000, '9403', 'https://example.com/sofa.jpg', 8),
+('Dining Table', 15000, '9403', 'https://example.com/dining_table.jpg', 8),
+('Bed Frame', 20000, '9403', 'https://example.com/bed_frame.jpg', 8),
+('Wardrobe', 18000, '9403', 'https://example.com/wardrobe.jpg', 8),
+('Coffee Table', 5000, '9403', 'https://example.com/coffee_table.jpg', 8),
+
+('Action Figure', 200, '9503', 'https://example.com/action_figure.jpg', 9),
+('Board Game', 1000, '9503', 'https://example.com/board_game.jpg', 9),
+('Puzzle', 300, '9503', 'https://example.com/puzzle.jpg', 9),
+('Remote Control Car', 1500, '9503', 'https://example.com/remote_control_car.jpg', 9),
+('LEGO Set', 5000, '9503', 'https://example.com/lego_set.jpg', 9),
+
+('Protein Powder', 1000, '9503', 'https://example.com/protein_powder.jpg', 10),
+('Yoga Mat', 500, '9503', 'https://example.com/yoga_mat.jpg', 10),
+('Fitness Tracker', 3000, '8517', 'https://example.com/fitness_tracker.jpg', 10),
+('Resistance Bands', 200, '9503', 'https://example.com/resistance_bands.jpg', 10),
+('Water Bottle', 100, '8481', 'https://example.com/water_bottle.jpg', 10);
+
+INSERT INTO products25 (name, price, hsncode, imgpath, catid) VALUES
+
+('Fiction Novel', 500, '9401', 'https://example.com/fiction_novel.jpg', 4),
+('Cookbook', 800, '9401', 'https://example.com/cookbook.jpg', 4),
+('Textbook', 1200, '9401', 'https://example.com/textbook.jpg', 4),
+('Biography', 600, '9401', 'https://example.com/biography.jpg', 4),
+('Self-Help Book', 700, '9401', 'https://example.com/self_help_book.jpg', 4);
+
+create or replace function allProducts()
+returns table(
+	proid int,
+	name varchar(100),
+	price bigint,
+	hsncode varchar(10),
+	imgpath varchar(1000),
+	catid int
+)
+as $$ 
+begin
+return query select * from products25;
+end; 
+$$ language plpgsql
+
+
+
+CREATE OR REPLACE FUNCTION allCategoryProducts(given_catid int)
+RETURNS TABLE(
+    proid int,
+    name varchar(100),
+    price bigint,
+    hsncode varchar(10),
+    imgpath varchar(1000),
+    catid int
+)
+AS $$ 
+BEGIN
+    RETURN QUERY SELECT products25.proid, products25.name, products25.price, products25.hsncode, products25.imgpath, products25.catid FROM products25 WHERE products25.catid = given_catid;
+END; 
+$$ LANGUAGE plpgsql;
+
+select * from allCategoryProducts(1)
+
+
+CREATE OR REPLACE FUNCTION allCategories()
+RETURNS TABLE(
+    catid int,
+    catname varchar(100)
+)
+AS $$ 
+BEGIN
+    RETURN QUERY SELECT * from categories25 ;
+END; 
+$$ LANGUAGE plpgsql;
+
+select * from allCategories()
