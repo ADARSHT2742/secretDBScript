@@ -1,5 +1,6 @@
 package com.Controllers;
 
+import javax.persistence.EntityManager;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.Database_logic_layer.userContract;
 import com.Models.LoginUser;
+import com.Models.Student;
 import com.Models.User;
 import com.Models.UserPassword;
 
@@ -18,6 +20,9 @@ public class AuthController {
 
 	@Autowired
 	private userContract udb;
+
+	@Autowired
+	private EntityManager em;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String homePage() {
@@ -63,6 +68,13 @@ public class AuthController {
 
 	@RequestMapping(value = "/reset_password", method = RequestMethod.POST)
 	public String resetPassword() {
+		return "fgpassword";
+	}
+
+	@RequestMapping(value = "/checkorm", method = RequestMethod.POST)
+	public String checkORM() {
+		Student s = new Student(1, "asdf", "asdf");
+		em.persist(s);
 		return "fgpassword";
 	}
 }
