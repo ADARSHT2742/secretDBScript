@@ -1,0 +1,29 @@
+In ORM., 
+
+Customised Query
+Stored Procedures -> not coming ERROR: calling CallableStatement.getMoreResults() tried using Native Query in ORM every thing is good
+Functions
+Views
+Triggers
+HQL
+Prepared statement
+Callable Statement
+
+
+CRUD Operations
+Find : using primary key or/ and specific parameters
+get entity graph
+
+persist
+find
+merge
+refresh 
+remove
+
+
+Try 
+OneToOne
+OneToMany
+ManyToOne
+ManyToMany
+
