@@ -1,7 +1,9 @@
 package com.Controllers;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import javax.servlet.http.HttpSession;
+import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,11 +11,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.Database_logic_layer.userContract;
 import com.Models.LoginUser;
 import com.Models.Student;
 import com.Models.User;
 import com.Models.UserPassword;
+import com.Repositories.userContract;
 
 @Controller
 public class AuthController {
@@ -70,11 +72,30 @@ public class AuthController {
 	public String resetPassword() {
 		return "fgpassword";
 	}
-
-	@RequestMapping(value = "/checkorm", method = RequestMethod.POST)
+	
+	
+	@RequestMapping(value = "/checkorm", method = RequestMethod.GET)
+	@Transactional
 	public String checkORM() {
-		Student s = new Student(1, "asdf", "asdf");
-		em.persist(s);
+		Student s = new Student();
+		s.setClassname("sas");
+		s.setName("\"asdf\", \"asdf\"");
+	 EntityTransaction tx = em.getTransaction();
+        try {
+            tx.begin();
+
+            em.persist(s);
+            System.out.println(s.toString());
+            System.out.println("I have added the student to db");
+
+            tx.commit();
+        } catch (Exception e) {
+            if (tx != null && tx.isActive()) {
+                tx.rollback();
+            }
+            e.printStackTrace();
+        }
+		System.out.println("I have added the student to db");
 		return "fgpassword";
 	}
 }

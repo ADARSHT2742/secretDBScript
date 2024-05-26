@@ -1,4 +1,4 @@
-package com.Database_logic_layer;
+package com.Repositories;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

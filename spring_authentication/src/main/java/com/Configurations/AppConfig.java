@@ -7,6 +7,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.validation.MessageCodesResolver;
 import org.springframework.validation.Validator;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
@@ -34,6 +36,7 @@ import com.Interceptors.AuthenticationInterceptor;
 public class AppConfig implements WebMvcConfigurer {
 	@Bean
 	public InternalResourceViewResolver view_resolver() {
+		System.out.println("I am loaded : app config");
 		InternalResourceViewResolver ivr = new InternalResourceViewResolver();
 		ivr.setPrefix("/WEB-INF/views/");
 		ivr.setSuffix(".jsp");
@@ -42,15 +45,16 @@ public class AppConfig implements WebMvcConfigurer {
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		System.out.println("I am in resources handler");
 		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/theme1/")
 				.setCachePeriod(31556926); // Cache period in seconds (1 year)
 	}
 
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
-		HandlerInterceptor auth_interceptor = new AuthenticationInterceptor();
-		registry.addInterceptor(auth_interceptor).addPathPatterns("/**").excludePathPatterns("/login", "/signup",
-				"/forgotPass", "/");
+//		HandlerInterceptor auth_interceptor = new AuthenticationInterceptor();
+//		registry.addInterceptor(auth_interceptor).addPathPatterns("/**").excludePathPatterns("/login", "/signup",
+//				"/forgotPass", "/","/checkorm","/student/**");
 		return;
 	}
 

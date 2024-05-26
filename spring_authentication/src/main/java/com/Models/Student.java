@@ -49,4 +49,9 @@ public class Student {
 		this.classname = classname;
 	}
 
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", classname=" + classname + "]";
+	}
+
 }
