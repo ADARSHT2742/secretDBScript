@@ -12,7 +12,6 @@ import org.springframework.validation.Validator;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.HandlerMethodReturnValueHandler;
 import org.springframework.web.servlet.HandlerExceptionResolver;
-import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.config.annotation.AsyncSupportConfigurer;
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -25,8 +24,6 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
-
-import com.Interceptors.AuthenticationInterceptor;
 
 @Configuration
 @EnableWebMvc
@@ -48,9 +45,9 @@ public class AppConfig implements WebMvcConfigurer {
 
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
-		HandlerInterceptor auth_interceptor = new AuthenticationInterceptor();
-		registry.addInterceptor(auth_interceptor).addPathPatterns("/**").excludePathPatterns("/login", "/signup",
-				"/forgotPass", "/");
+		// HandlerInterceptor auth_interceptor = new AuthenticationInterceptor();
+		// registry.addInterceptor(auth_interceptor).addPathPatterns("/**").excludePathPatterns("/login", "/signup",
+		// "/forgotPass", "/");
 		return;
 	}
 

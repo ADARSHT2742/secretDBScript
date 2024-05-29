@@ -3,6 +3,7 @@ package com.Controllers;
 import javax.persistence.EntityManager;
 import javax.servlet.http.HttpSession;
 
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -24,8 +25,36 @@ public class AuthController {
 	@Autowired
 	private EntityManager em;
 
+	@Autowired
+	private Logger logger;
+
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String homePage() {
+		logger.trace("This is a TRACE message");
+		logger.debug("This is a DEBUG message");
+		logger.info("This is an INFO message");
+		logger.warn("This is a WARN message");
+		logger.error("This is an ERROR message");
+		logger.fatal("This is a FATAL message");
+
+		// Check if DEBUG level is enabled
+		System.out.println("DEBUG level is enabled: " + logger.isDebugEnabled());
+
+		// Check if TRACE level is enabled
+		System.out.println("TRACE level is enabled: " + logger.isTraceEnabled());
+
+		// Check if INFO level is enabled
+		System.out.println("INFO level is enabled: " + logger.isInfoEnabled());
+
+		// Check if WARN level is enabled
+		System.out.println("WARN level is enabled: " + logger.isWarnEnabled());
+
+		// Check if ERROR level is enabled
+		System.out.println("ERROR level is enabled: " + logger.isErrorEnabled());
+
+		// Check if FATAL level is enabled
+		System.out.println("FATAL level is enabled: " + logger.isFatalEnabled());
+
 		return "home";
 	}
 
