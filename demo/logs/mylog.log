@@ -1,0 +1,62 @@
+2024-05-30T09:29:30.586+05:30  INFO 9312 --- [demo] [main] com.example.demo.ServletInitializer      : Starting ServletInitializer v0.0.1-SNAPSHOT using Java 17.0.10 with PID 9312 (D:\workspace\Pro\.metadata\.plugins\org.eclipse.wst.server.core\tmp3\wtpwebapps\demo\WEB-INF\classes started by SivaAdarshT in C:\Users\SivaAdarshT\git\secretDBScript\demo)
+2024-05-30T09:29:30.597+05:30  INFO 9312 --- [demo] [main] com.example.demo.ServletInitializer      : No active profile set, falling back to 1 default profile: "default"
+2024-05-30T09:29:30.984+05:30  INFO 9312 --- [demo] [main] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-30T09:29:35.343+05:30  INFO 9312 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-30T09:29:35.501+05:30  INFO 9312 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 101 ms. Found 0 JPA repository interfaces.
+2024-05-30T09:29:37.420+05:30  INFO 9312 --- [demo] [main] o.a.c.c.C.[.[localhost].[/demo]          : Initializing Spring embedded WebApplicationContext
+2024-05-30T09:29:37.421+05:30  INFO 9312 --- [demo] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6432 ms
+2024-05-30T09:29:38.604+05:30  INFO 9312 --- [demo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-30T09:29:39.444+05:30  INFO 9312 --- [demo] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-05-30T09:29:39.855+05:30  INFO 9312 --- [demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-30T09:29:43.201+05:30  INFO 9312 --- [demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-30T09:29:43.557+05:30  INFO 9312 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-30T09:29:44.229+05:30  INFO 9312 --- [demo] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@14419acf
+2024-05-30T09:29:44.245+05:30  INFO 9312 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-30T09:29:44.542+05:30  WARN 9312 --- [demo] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-30T09:29:53.102+05:30  INFO 9312 --- [demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-30T09:29:53.484+05:30  INFO 9312 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-30T09:29:54.345+05:30  WARN 9312 --- [demo] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-30T09:29:56.586+05:30  INFO 9312 --- [demo] [main] com.example.demo.ServletInitializer      : Started ServletInitializer in 29.358 seconds (process running for 46.33)
+2024-05-30T09:29:56.718+05:30  INFO 9312 --- [demo] [main] org.apache.catalina.startup.Catalina     : Server startup in [45315] milliseconds
+2024-05-30T09:30:07.161+05:30  INFO 9312 --- [demo] [http-nio-8092-exec-2] o.a.c.c.C.[.[localhost].[/demo]          : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-30T09:30:07.161+05:30  INFO 9312 --- [demo] [http-nio-8092-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-30T09:30:07.163+05:30  INFO 9312 --- [demo] [http-nio-8092-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-05-30T09:30:07.726+05:30  INFO 9312 --- [demo] [http-nio-8092-exec-2] c.e.demo.Controllers.HomeController      : Some request to application started......
+2024-05-30T09:30:19.623+05:30  INFO 9312 --- [demo] [http-nio-8092-exec-4] c.e.demo.Repositories.UserRepository     : Request made to DB to find user with username : adarsh
+2024-05-30T09:30:22.267+05:30  INFO 9312 --- [demo] [http-nio-8092-exec-4] c.e.demo.Repositories.UserRepository     : User details with given username feteched successfully : adarsh
+2024-05-30T09:30:22.267+05:30  INFO 9312 --- [demo] [http-nio-8092-exec-4] c.e.demo.Repositories.UserRepository     : User [id=752, fullname=sivaadarsh, username=adarsh, mail=sivaadsh2742@gmail.com, usercontact=8142836955]
+2024-05-30T09:30:22.409+05:30  INFO 9312 --- [demo] [http-nio-8092-exec-4] c.e.demo.Controllers.HomeController      : Successful authentication by user : adarsh
+2024-05-30T09:30:22.418+05:30  INFO 9312 --- [demo] [http-nio-8092-exec-5] c.e.demo.Controllers.HomeController      : User has moved to welcome page : Authenticated and Authorized
+2024-05-30T09:34:18.542+05:30  INFO 9312 --- [demo] [http-nio-8092-exec-7] c.e.demo.Repositories.UserRepository     : Request made to DB to find user with username : adarsh
+2024-05-30T09:34:18.570+05:30  INFO 9312 --- [demo] [http-nio-8092-exec-7] c.e.demo.Repositories.UserRepository     : User details with given username feteched successfully : adarsh
+2024-05-30T09:34:18.570+05:30  INFO 9312 --- [demo] [http-nio-8092-exec-7] c.e.demo.Repositories.UserRepository     : User [id=752, fullname=sivaadarsh, username=adarsh, mail=sivaadsh2742@gmail.com, usercontact=8142836955]
+2024-05-30T09:34:18.588+05:30  INFO 9312 --- [demo] [http-nio-8092-exec-7] c.e.demo.Controllers.HomeController      : Successful authentication by user : adarsh
+2024-05-30T09:34:18.601+05:30  INFO 9312 --- [demo] [http-nio-8092-exec-8] c.e.demo.Controllers.HomeController      : User has moved to welcome page : Authenticated and Authorized
+2024-05-30T11:10:16.164+05:30  INFO 9312 --- [demo] [http-nio-8092-exec-10] c.e.demo.Controllers.HomeController      : Some request to application started......
+2024-05-30T11:12:42.297+05:30  INFO 9312 --- [demo] [http-nio-8092-exec-3] c.e.demo.Controllers.HomeController      : User requested to reset password page
+2024-05-30T11:14:24.021+05:30  INFO 9312 --- [demo] [Catalina-utility-1] o.apache.catalina.core.StandardContext   : Reloading Context with name [/demo] has started
+2024-05-30T11:14:24.066+05:30  INFO 9312 --- [demo] [Catalina-utility-1] o.a.c.c.C.[.[localhost].[/demo]          : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2024-05-30T11:14:24.068+05:30  INFO 9312 --- [demo] [Catalina-utility-1] o.a.c.c.C.[.[localhost].[/demo]          : Closing Spring root WebApplicationContext
+2024-05-30T11:14:24.198+05:30  INFO 9312 --- [demo] [Catalina-utility-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-30T11:14:24.456+05:30  INFO 9312 --- [demo] [Catalina-utility-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-30T11:14:24.589+05:30  INFO 9312 --- [demo] [Catalina-utility-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-30T11:15:09.074+05:30  INFO 9312 --- [demo] [Catalina-utility-1] com.example.demo.ServletInitializer      : Starting ServletInitializer v0.0.1-SNAPSHOT using Java 17.0.10 with PID 9312 (D:\workspace\Pro\.metadata\.plugins\org.eclipse.wst.server.core\tmp3\wtpwebapps\demo\WEB-INF\classes started by SivaAdarshT in C:\Users\SivaAdarshT\git\secretDBScript\demo)
+2024-05-30T11:15:09.091+05:30  INFO 9312 --- [demo] [Catalina-utility-1] com.example.demo.ServletInitializer      : No active profile set, falling back to 1 default profile: "default"
+2024-05-30T11:15:09.677+05:30  INFO 9312 --- [demo] [Catalina-utility-1] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-30T11:15:17.294+05:30  INFO 9312 --- [demo] [Catalina-utility-1] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-30T11:15:17.511+05:30  INFO 9312 --- [demo] [Catalina-utility-1] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 146 ms. Found 0 JPA repository interfaces.
+2024-05-30T11:15:20.482+05:30  INFO 9312 --- [demo] [Catalina-utility-1] o.a.c.c.C.[.[localhost].[/demo]          : Initializing Spring embedded WebApplicationContext
+2024-05-30T11:15:20.483+05:30  INFO 9312 --- [demo] [Catalina-utility-1] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 10798 ms
+2024-05-30T11:15:23.561+05:30  INFO 9312 --- [demo] [Catalina-utility-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-30T11:15:25.142+05:30  INFO 9312 --- [demo] [Catalina-utility-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-05-30T11:15:25.785+05:30  INFO 9312 --- [demo] [Catalina-utility-1] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-30T11:15:31.007+05:30  INFO 9312 --- [demo] [Catalina-utility-1] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-30T11:15:31.861+05:30  INFO 9312 --- [demo] [Catalina-utility-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-05-30T11:15:32.676+05:30  INFO 9312 --- [demo] [Catalina-utility-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@620050ae
+2024-05-30T11:15:32.696+05:30  INFO 9312 --- [demo] [Catalina-utility-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-05-30T11:15:33.492+05:30  WARN 9312 --- [demo] [Catalina-utility-1] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-30T11:15:47.411+05:30  INFO 9312 --- [demo] [Catalina-utility-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-30T11:15:48.017+05:30  INFO 9312 --- [demo] [Catalina-utility-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-30T11:15:49.145+05:30  WARN 9312 --- [demo] [Catalina-utility-1] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-30T11:15:53.499+05:30  INFO 9312 --- [demo] [Catalina-utility-1] com.example.demo.ServletInitializer      : Started ServletInitializer in 49.705 seconds (process running for 6403.202)
+2024-05-30T11:15:53.561+05:30  INFO 9312 --- [demo] [Catalina-utility-1] o.apache.catalina.core.StandardContext   : Reloading Context with name [/demo] is completed
